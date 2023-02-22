@@ -7,11 +7,11 @@ fn index() -> &'static str {
 }
 
 #[post("/")]
-fn index() -> &'static str {
+fn indexPost() -> &'static str {
     "Esto es un post"
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build().mount("/", routes![index, indexPost])
 }
